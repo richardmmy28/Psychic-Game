@@ -1,0 +1,19 @@
+#game {
+    color: green;
+}
+
+#wins {
+    color: blue;
+}
+
+#losses {
+    color: red;
+}
+
+#guesses {
+    color: purple;
+}
+
+#used {
+    color: orange;
+}
