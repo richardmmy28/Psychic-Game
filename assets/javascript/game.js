@@ -3,19 +3,29 @@ var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 
 var wins = 0;
 var losses = 0;
 var guesses = 9;
+var lettersGuessed = [];
+
 
 var computerChoice = letters[Math.floor(Math.random() * letters.length)];
 
-console.log(computerChoice)
+console.log(computerChoice);
 
-document.onkeypress = function(event) {
+document.onkeyup = function(event) {
     var userGuess = event.key;
-
+    lettersGuessed.push(userGuess);
+    //This if statement allows user to choose letter.//
     if(userGuess === computerChoice){
         wins++;
-    }else{
+        alert("you guessed the right letter");
+    
+    //This elseIf statement keeps track of how many guesses and passes an alert if you're guess is wrong //
+    }else if(guesses > 1){
         guesses--;
+        alert("Guess Again");
     }
+    else {}
+        
+    //this if statment equates to game loss//
     if(guesses < 1){
         losses++;
     }
@@ -24,6 +34,7 @@ document.onkeypress = function(event) {
 document.getElementById("wins").innerHTML = "Wins: " + wins;
 document.getElementById("losses").innerHTML = "losses: " + losses;
 document.getElementById("guesses").innerHTML = "Guesses left: " + guesses;
+document.getElementById("used").innerHTML = "Letters guessed: " + lettersGuessed;
 }
    
    
