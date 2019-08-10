@@ -1,5 +1,9 @@
+#title {
+    color: darkgreen;
+}
+
 #game {
-    color: green;
+    color: black;
 }
 
 #wins {
@@ -10,7 +14,7 @@
     color: red;
 }
 
-#guesses {
+#guessesLeft {
     color: purple;
 }
 
